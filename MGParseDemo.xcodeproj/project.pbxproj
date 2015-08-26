@@ -33,6 +33,11 @@
 		175CE0541B8C676B004CEAC0 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0531B8C676B004CEAC0 /* ProductRepository.swift */; };
 		175CE0571B8C6861004CEAC0 /* ProductDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0561B8C6861004CEAC0 /* ProductDto.swift */; };
 		175CE0591B8C69BC004CEAC0 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0581B8C69BC004CEAC0 /* Mapper.swift */; };
+		17BF530F1B8D56D90050AE66 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF530E1B8D56D90050AE66 /* SyncService.swift */; };
+		17BF53111B8D57EB0050AE66 /* ProductParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF53101B8D57EB0050AE66 /* ProductParseClient.swift */; };
+		17BF53151B8D5B150050AE66 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF53131B8D5B150050AE66 /* ProductListViewController.swift */; };
+		17BF53161B8D5B150050AE66 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF53141B8D5B150050AE66 /* ProductViewController.swift */; };
+		17BF53181B8D5C3F0050AE66 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF53171B8D5C3F0050AE66 /* ProductService.swift */; };
 		1C3BCFA32C45FA72DB4C6474 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E03AFB0D4028D79D3FF8FE8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +84,11 @@
 		175CE0531B8C676B004CEAC0 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		175CE0561B8C6861004CEAC0 /* ProductDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDto.swift; sourceTree = "<group>"; };
 		175CE0581B8C69BC004CEAC0 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		17BF530E1B8D56D90050AE66 /* SyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		17BF53101B8D57EB0050AE66 /* ProductParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductParseClient.swift; sourceTree = "<group>"; };
+		17BF53131B8D5B150050AE66 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		17BF53141B8D5B150050AE66 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		17BF53171B8D5C3F0050AE66 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		4EBDDAF1A6B34AFC0F9C232B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E03AFB0D4028D79D3FF8FE8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B29BE83E21B5B281290D514 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 				175CE0521B8C674E004CEAC0 /* Repositories */,
 				175CE0231B8C5C60004CEAC0 /* Frameworks */,
 				175CE0461B8C6057004CEAC0 /* Model */,
+				17BF53121B8D5AB00050AE66 /* UI */,
 				175CE0031B8C591E004CEAC0 /* AppDelegate.swift */,
 				175CE0051B8C591E004CEAC0 /* ViewController.swift */,
 				175CE0071B8C591E004CEAC0 /* Main.storyboard */,
@@ -217,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				175CE0531B8C676B004CEAC0 /* ProductRepository.swift */,
+				17BF53101B8D57EB0050AE66 /* ProductParseClient.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -226,8 +238,19 @@
 			children = (
 				175CE0561B8C6861004CEAC0 /* ProductDto.swift */,
 				175CE0581B8C69BC004CEAC0 /* Mapper.swift */,
+				17BF530E1B8D56D90050AE66 /* SyncService.swift */,
+				17BF53171B8D5C3F0050AE66 /* ProductService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		17BF53121B8D5AB00050AE66 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				17BF53131B8D5B150050AE66 /* ProductListViewController.swift */,
+				17BF53141B8D5B150050AE66 /* ProductViewController.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		EEA8ADF89AEB1B8AC1E1B6C1 /* Pods */ = {
@@ -384,6 +407,11 @@
 			files = (
 				175CE0061B8C591E004CEAC0 /* ViewController.swift in Sources */,
 				175CE0571B8C6861004CEAC0 /* ProductDto.swift in Sources */,
+				17BF53151B8D5B150050AE66 /* ProductListViewController.swift in Sources */,
+				17BF53161B8D5B150050AE66 /* ProductViewController.swift in Sources */,
+				17BF53111B8D57EB0050AE66 /* ProductParseClient.swift in Sources */,
+				17BF53181B8D5C3F0050AE66 /* ProductService.swift in Sources */,
+				17BF530F1B8D56D90050AE66 /* SyncService.swift in Sources */,
 				175CE0591B8C69BC004CEAC0 /* Mapper.swift in Sources */,
 				175CE0541B8C676B004CEAC0 /* ProductRepository.swift in Sources */,
 				175CE04D1B8C61D5004CEAC0 /* Product.m in Sources */,
