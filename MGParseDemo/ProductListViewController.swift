@@ -77,7 +77,7 @@ class ProductListViewController: UITableViewController, ProductViewControllerDel
 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath) 
         
         let product = products[indexPath.row]
         cell.textLabel?.text = product.name
@@ -96,7 +96,7 @@ class ProductListViewController: UITableViewController, ProductViewControllerDel
             productService.deleteProductById(product.id)
             
             var row = -1
-            for (index, value) in enumerate(products) {
+            for (index, value) in products.enumerate() {
                 if value.id == product.id {
                     row = index
                     break
@@ -114,7 +114,7 @@ class ProductListViewController: UITableViewController, ProductViewControllerDel
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showProduct" {
-            var controller = (segue.destinationViewController as! UINavigationController).topViewController as! ProductViewController
+            let controller = (segue.destinationViewController as! UINavigationController).topViewController as! ProductViewController
             if let product = sender as? ProductDto {
                 controller.product = product
             }
@@ -134,7 +134,7 @@ class ProductListViewController: UITableViewController, ProductViewControllerDel
     func productViewControllerDidUpdate(product: ProductDto) {
         productService.updateProduct(product)
         var row = -1
-        for (index, value) in enumerate(products) {
+        for (index, value) in products.enumerate() {
             if value.id == product.id {
                 row = index
                 break

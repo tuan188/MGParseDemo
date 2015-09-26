@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1721F75F1BB68DEE004D373E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721F75E1BB68DEE004D373E /* libz.tbd */; };
+		1721F7611BB68DF8004D373E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721F7601BB68DF8004D373E /* libsqlite3.tbd */; };
+		1721F76C1BB68EBE004D373E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721F76A1BB68EBE004D373E /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		1721F76D1BB68EBE004D373E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1721F76B1BB68EBE004D373E /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
 		175CE0041B8C591E004CEAC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0031B8C591E004CEAC0 /* AppDelegate.swift */; };
 		175CE0061B8C591E004CEAC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0051B8C591E004CEAC0 /* ViewController.swift */; };
 		175CE0091B8C591E004CEAC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175CE0071B8C591E004CEAC0 /* Main.storyboard */; };
 		175CE00B1B8C591E004CEAC0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175CE00A1B8C591E004CEAC0 /* Images.xcassets */; };
 		175CE00E1B8C591E004CEAC0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175CE00C1B8C591E004CEAC0 /* LaunchScreen.xib */; };
-		175CE01A1B8C591F004CEAC0 /* MGParseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0191B8C591F004CEAC0 /* MGParseDemoTests.swift */; };
 		175CE0291B8C5C75004CEAC0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE0281B8C5C75004CEAC0 /* AudioToolbox.framework */; };
 		175CE02B1B8C5C7D004CEAC0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE02A1B8C5C7D004CEAC0 /* CFNetwork.framework */; };
 		175CE02D1B8C5C82004CEAC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE02C1B8C5C82004CEAC0 /* CoreGraphics.framework */; };
@@ -22,14 +25,10 @@
 		175CE0351B8C5CA1004CEAC0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE0341B8C5CA1004CEAC0 /* Security.framework */; };
 		175CE0371B8C5CA8004CEAC0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE0361B8C5CA8004CEAC0 /* StoreKit.framework */; };
 		175CE0391B8C5CAF004CEAC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE0381B8C5CAF004CEAC0 /* SystemConfiguration.framework */; };
-		175CE03B1B8C5CB8004CEAC0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE03A1B8C5CB8004CEAC0 /* libz.dylib */; };
-		175CE03D1B8C5CC1004CEAC0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE03C1B8C5CC1004CEAC0 /* libsqlite3.dylib */; };
 		175CE03F1B8C5CC7004CEAC0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE03E1B8C5CC7004CEAC0 /* Accounts.framework */; };
 		175CE0411B8C5CD3004CEAC0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE0401B8C5CD3004CEAC0 /* Social.framework */; };
 		175CE0491B8C608C004CEAC0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0471B8C608C004CEAC0 /* Model.xcdatamodeld */; };
 		175CE04D1B8C61D5004CEAC0 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 175CE04C1B8C61D5004CEAC0 /* Product.m */; };
-		175CE0501B8C6526004CEAC0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE04E1B8C6526004CEAC0 /* Bolts.framework */; };
-		175CE0511B8C6526004CEAC0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175CE04F1B8C6526004CEAC0 /* Parse.framework */; };
 		175CE0541B8C676B004CEAC0 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0531B8C676B004CEAC0 /* ProductRepository.swift */; };
 		175CE0571B8C6861004CEAC0 /* ProductDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0561B8C6861004CEAC0 /* ProductDto.swift */; };
 		175CE0591B8C69BC004CEAC0 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CE0581B8C69BC004CEAC0 /* Mapper.swift */; };
@@ -41,17 +40,11 @@
 		1C3BCFA32C45FA72DB4C6474 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E03AFB0D4028D79D3FF8FE8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		175CE0141B8C591F004CEAC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 175CDFF61B8C591E004CEAC0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 175CDFFD1B8C591E004CEAC0;
-			remoteInfo = MGParseDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		1721F75E1BB68DEE004D373E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1721F7601BB68DF8004D373E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1721F76A1BB68EBE004D373E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Bolts.framework; sourceTree = "<group>"; };
+		1721F76B1BB68EBE004D373E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Parse.framework; sourceTree = "<group>"; };
 		175CDFFE1B8C591E004CEAC0 /* MGParseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGParseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175CE0021B8C591E004CEAC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		175CE0031B8C591E004CEAC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,9 +52,6 @@
 		175CE0081B8C591E004CEAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		175CE00A1B8C591E004CEAC0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		175CE00D1B8C591E004CEAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		175CE0131B8C591F004CEAC0 /* MGParseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGParseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		175CE0181B8C591F004CEAC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		175CE0191B8C591F004CEAC0 /* MGParseDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGParseDemoTests.swift; sourceTree = "<group>"; };
 		175CE0281B8C5C75004CEAC0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		175CE02A1B8C5C7D004CEAC0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		175CE02C1B8C5C82004CEAC0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,16 +61,12 @@
 		175CE0341B8C5CA1004CEAC0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		175CE0361B8C5CA8004CEAC0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		175CE0381B8C5CAF004CEAC0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		175CE03A1B8C5CB8004CEAC0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		175CE03C1B8C5CC1004CEAC0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		175CE03E1B8C5CC7004CEAC0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		175CE0401B8C5CD3004CEAC0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		175CE0481B8C608C004CEAC0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		175CE04A1B8C61D4004CEAC0 /* MGParseDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MGParseDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		175CE04B1B8C61D5004CEAC0 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		175CE04C1B8C61D5004CEAC0 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		175CE04E1B8C6526004CEAC0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Bolts.framework; sourceTree = "<group>"; };
-		175CE04F1B8C6526004CEAC0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../Parse.framework; sourceTree = "<group>"; };
 		175CE0531B8C676B004CEAC0 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		175CE0561B8C6861004CEAC0 /* ProductDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDto.swift; sourceTree = "<group>"; };
 		175CE0581B8C69BC004CEAC0 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
@@ -99,12 +85,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1721F76C1BB68EBE004D373E /* Bolts.framework in Frameworks */,
+				1721F7611BB68DF8004D373E /* libsqlite3.tbd in Frameworks */,
+				1721F75F1BB68DEE004D373E /* libz.tbd in Frameworks */,
 				175CE0411B8C5CD3004CEAC0 /* Social.framework in Frameworks */,
 				175CE03F1B8C5CC7004CEAC0 /* Accounts.framework in Frameworks */,
-				175CE03D1B8C5CC1004CEAC0 /* libsqlite3.dylib in Frameworks */,
-				175CE03B1B8C5CB8004CEAC0 /* libz.dylib in Frameworks */,
-				175CE0511B8C6526004CEAC0 /* Parse.framework in Frameworks */,
 				175CE0391B8C5CAF004CEAC0 /* SystemConfiguration.framework in Frameworks */,
+				1721F76D1BB68EBE004D373E /* Parse.framework in Frameworks */,
 				175CE0371B8C5CA8004CEAC0 /* StoreKit.framework in Frameworks */,
 				175CE0351B8C5CA1004CEAC0 /* Security.framework in Frameworks */,
 				175CE0331B8C5C9B004CEAC0 /* QuartzCore.framework in Frameworks */,
@@ -113,15 +100,7 @@
 				175CE02D1B8C5C82004CEAC0 /* CoreGraphics.framework in Frameworks */,
 				175CE02B1B8C5C7D004CEAC0 /* CFNetwork.framework in Frameworks */,
 				175CE0291B8C5C75004CEAC0 /* AudioToolbox.framework in Frameworks */,
-				175CE0501B8C6526004CEAC0 /* Bolts.framework in Frameworks */,
 				1C3BCFA32C45FA72DB4C6474 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		175CE0101B8C591F004CEAC0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				175CE0001B8C591E004CEAC0 /* MGParseDemo */,
-				175CE0161B8C591F004CEAC0 /* MGParseDemoTests */,
 				175CDFFF1B8C591E004CEAC0 /* Products */,
 				EEA8ADF89AEB1B8AC1E1B6C1 /* Pods */,
 				FDC4B18FCC06C4A25A162E5A /* Frameworks */,
@@ -143,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				175CDFFE1B8C591E004CEAC0 /* MGParseDemo.app */,
-				175CE0131B8C591F004CEAC0 /* MGParseDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +128,8 @@
 		175CE0001B8C591E004CEAC0 /* MGParseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1721F76A1BB68EBE004D373E /* Bolts.framework */,
+				1721F76B1BB68EBE004D373E /* Parse.framework */,
 				175CE0551B8C6856004CEAC0 /* Services */,
 				175CE0521B8C674E004CEAC0 /* Repositories */,
 				175CE0231B8C5C60004CEAC0 /* Frameworks */,
@@ -174,32 +153,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		175CE0161B8C591F004CEAC0 /* MGParseDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				175CE0191B8C591F004CEAC0 /* MGParseDemoTests.swift */,
-				175CE0171B8C591F004CEAC0 /* Supporting Files */,
-			);
-			path = MGParseDemoTests;
-			sourceTree = "<group>";
-		};
-		175CE0171B8C591F004CEAC0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				175CE0181B8C591F004CEAC0 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		175CE0231B8C5C60004CEAC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				175CE04E1B8C6526004CEAC0 /* Bolts.framework */,
-				175CE04F1B8C6526004CEAC0 /* Parse.framework */,
 				175CE0401B8C5CD3004CEAC0 /* Social.framework */,
 				175CE03E1B8C5CC7004CEAC0 /* Accounts.framework */,
-				175CE03C1B8C5CC1004CEAC0 /* libsqlite3.dylib */,
-				175CE03A1B8C5CB8004CEAC0 /* libz.dylib */,
 				175CE0381B8C5CAF004CEAC0 /* SystemConfiguration.framework */,
 				175CE0361B8C5CA8004CEAC0 /* StoreKit.framework */,
 				175CE0341B8C5CA1004CEAC0 /* Security.framework */,
@@ -265,6 +223,8 @@
 		FDC4B18FCC06C4A25A162E5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1721F7601BB68DF8004D373E /* libsqlite3.tbd */,
+				1721F75E1BB68DEE004D373E /* libz.tbd */,
 				5E03AFB0D4028D79D3FF8FE8 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -292,39 +252,19 @@
 			productReference = 175CDFFE1B8C591E004CEAC0 /* MGParseDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		175CE0121B8C591F004CEAC0 /* MGParseDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 175CE0201B8C591F004CEAC0 /* Build configuration list for PBXNativeTarget "MGParseDemoTests" */;
-			buildPhases = (
-				175CE00F1B8C591F004CEAC0 /* Sources */,
-				175CE0101B8C591F004CEAC0 /* Frameworks */,
-				175CE0111B8C591F004CEAC0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				175CE0151B8C591F004CEAC0 /* PBXTargetDependency */,
-			);
-			name = MGParseDemoTests;
-			productName = MGParseDemoTests;
-			productReference = 175CE0131B8C591F004CEAC0 /* MGParseDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		175CDFF61B8C591E004CEAC0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Tuan Truong";
 				TargetAttributes = {
 					175CDFFD1B8C591E004CEAC0 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					175CE0121B8C591F004CEAC0 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 175CDFFD1B8C591E004CEAC0;
 					};
 				};
 			};
@@ -342,7 +282,6 @@
 			projectRoot = "";
 			targets = (
 				175CDFFD1B8C591E004CEAC0 /* MGParseDemo */,
-				175CE0121B8C591F004CEAC0 /* MGParseDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,13 +294,6 @@
 				175CE0091B8C591E004CEAC0 /* Main.storyboard in Resources */,
 				175CE00E1B8C591E004CEAC0 /* LaunchScreen.xib in Resources */,
 				175CE00B1B8C591E004CEAC0 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		175CE0111B8C591F004CEAC0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,23 +352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		175CE00F1B8C591F004CEAC0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				175CE01A1B8C591F004CEAC0 /* MGParseDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		175CE0151B8C591F004CEAC0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 175CDFFD1B8C591E004CEAC0 /* MGParseDemo */;
-			targetProxy = 175CE0141B8C591F004CEAC0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		175CE0071B8C591E004CEAC0 /* Main.storyboard */ = {
@@ -479,6 +395,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -551,9 +468,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MGParseDemo/Frameworks",
 					/Users/tuan/Documents/Git,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MGParseDemo",
 				);
 				INFOPLIST_FILE = MGParseDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "truong.tuan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MGParseDemo/MGParseDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -570,45 +490,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MGParseDemo/Frameworks",
 					/Users/tuan/Documents/Git,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MGParseDemo",
 				);
 				INFOPLIST_FILE = MGParseDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "truong.tuan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MGParseDemo/MGParseDemo-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		175CE0211B8C591F004CEAC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MGParseDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGParseDemo.app/MGParseDemo";
-			};
-			name = Debug;
-		};
-		175CE0221B8C591F004CEAC0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MGParseDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MGParseDemo.app/MGParseDemo";
 			};
 			name = Release;
 		};
@@ -629,15 +518,6 @@
 			buildConfigurations = (
 				175CE01E1B8C591F004CEAC0 /* Debug */,
 				175CE01F1B8C591F004CEAC0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		175CE0201B8C591F004CEAC0 /* Build configuration list for PBXNativeTarget "MGParseDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				175CE0211B8C591F004CEAC0 /* Debug */,
-				175CE0221B8C591F004CEAC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

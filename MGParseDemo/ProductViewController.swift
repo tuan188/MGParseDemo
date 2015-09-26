@@ -44,8 +44,8 @@ class ProductViewController: UITableViewController {
             product = ProductDto()
             isUpdatingProduct = false
         }
-        product.name = nameTextField.text
-        var string = NSString(string: priceTextField.text)
+        product.name = nameTextField.text!
+        let string = NSString(string: priceTextField.text!)
         product.price = string.floatValue
         product.modificationDate = NSDate()
         

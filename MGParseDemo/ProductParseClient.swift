@@ -11,50 +11,72 @@ import Parse
 
 class ProductParseClient: NSObject {
     func addProduct(product: ProductDto) {
-        var obj = PFObject(className: "Product")
+        let obj = PFObject(className: "Product")
         obj.setObject(product.id, forKey: "id")
         obj.setObject(product.creationDate, forKey: "creationDate")
         obj.setObject(product.modificationDate, forKey: "modificationDate")
         obj.setObject(product.name, forKey: "name")
         obj.setObject(product.price, forKey: "price")
-        obj.save()
+        do {
+            try obj.save()
+        }
+        catch {
+            print("Save error!")
+        }
+        
     }
     
     func updateProduct(product: ProductDto) {
-        var query = PFQuery(className: "Product")
+        let query = PFQuery(className: "Product")
         query.whereKey("id", equalTo: product.id)
-        if let objects = query.findObjects() {
+        do {
+            let objects = try query.findObjects()
             for obj in objects {
                 obj.setObject(product.modificationDate, forKey: "modificationDate")
                 obj.setObject(product.name, forKey: "name")
                 obj.setObject(product.price, forKey: "price")
-                obj.save()
+                try obj.save()
             }
+            
         }
+        catch {
+            print("Query error!")
+        }
+        
     }
     
     func deleteProduct(productID: String) {
-        var query = PFQuery(className: "Product")
+        let query = PFQuery(className: "Product")
         query.whereKey("id", equalTo: productID)
-        if let objects = query.findObjects() {
+        do {
+            let objects = try query.findObjects()
             for obj in objects {
-                obj.delete()
+                try obj.delete()
             }
         }
+        catch {
+            print("Delete object error!")
+        }
+        
     }
     
     func count() -> Int {
-        var query = PFQuery(className: "Product")
-        return query.countObjects()
+        let query = PFQuery(className: "Product")
+        var count = -1
+        var error: NSError?
+        count = query.countObjects(&error)
+        
+        return count
     }
     
     func getAllProducts() -> [ProductDto] {
         var products = [ProductDto]()
-        var query = PFQuery(className: "Product")
+        let query = PFQuery(className: "Product")
         
-        if let objects = query.findObjects() {
+        do {
+            let objects = try query.findObjects()
             for obj in objects {
-                var product = ProductDto()
+                let product = ProductDto()
                 product.id = obj.objectForKey("id") as! String
                 product.name = obj.objectForKey("name") as! String
                 product.price = obj.objectForKey("price") as! Float
@@ -62,28 +84,37 @@ class ProductParseClient: NSObject {
                 product.modificationDate = obj.objectForKey("modificationDate") as! NSDate
                 products.append(product)
             }
+        }
+        catch {
+            print("Get products error!")
         }
         
         return products
     }
     
     func mostRecentUpdatedDate() -> NSDate? {
-        var query = PFQuery(className: "Product")
+        let query = PFQuery(className: "Product")
         query.orderByDescending("modificationDate")
-        if let obj = query.getFirstObject() {
+        do {
+            let obj = try query.getFirstObject()
             return obj.objectForKey("modificationDate") as? NSDate
         }
+        catch {
+            print("Get most recent updated date error!")
+        }
+        
         return nil
     }
     
     func getProductsUpdatedAfterDate(date: NSDate) -> [ProductDto] {
         var products = [ProductDto]()
-        var query = PFQuery(className: "Product")
+        let query = PFQuery(className: "Product")
         query.whereKey("modificationDate", greaterThan: date)
         
-        if let objects = query.findObjects() {
+        do {
+            let objects = try query.findObjects()
             for obj in objects {
-                var product = ProductDto()
+                let product = ProductDto()
                 product.id = obj.objectForKey("id") as! String
                 product.name = obj.objectForKey("name") as! String
                 product.price = obj.objectForKey("price") as! Float
@@ -92,7 +123,10 @@ class ProductParseClient: NSObject {
                 products.append(product)
             }
         }
-        
+        catch {
+            print("Get products error!")
+        }
         return products
     }
+    
 }

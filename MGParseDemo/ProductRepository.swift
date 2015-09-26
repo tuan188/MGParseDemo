@@ -37,13 +37,11 @@ class ProductRepository: NSObject {
     }
     
     func count() -> Int {
-        let context = NSManagedObjectContext.MR_context()
-        return Int(Product.MR_countOfEntitiesWithContext(context))
+        return Int(Product.MR_countOfEntities())
     }
     
     func getAllProducts() -> [ProductDto] {
-        let context = NSManagedObjectContext.MR_context()
-        let products = Product.MR_findAllInContext(context) as! [Product]
+        let products = Product.MR_findAll() as! [Product]
         var productDtos = [ProductDto]()
         
         for product in products {
@@ -54,7 +52,6 @@ class ProductRepository: NSObject {
     }
     
     func mostRecentUpdatedDate() -> NSDate? {
-        let context = NSManagedObjectContext.MR_context()
         if let products = Product.MR_findAllSortedBy("modification_date", ascending: false) as? [Product] {
             if products.count > 0 {
                 return products[0].modification_date
@@ -65,7 +62,6 @@ class ProductRepository: NSObject {
     }
     
     func getProductsUpdatedAfterDate(date: NSDate) -> [ProductDto] {
-        let context = NSManagedObjectContext.MR_context()
         let predicate = NSPredicate(format: "modification_date > %@", date)
         let products = Product.MR_findAllSortedBy("modification_date", ascending: true, withPredicate: predicate) as! [Product]
         var productDtos = [ProductDto]()
