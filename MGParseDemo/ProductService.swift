@@ -16,15 +16,32 @@ class ProductService: NSObject {
     }
     
     func updateProduct(productDto: ProductDto) {
+        productDto.modificationDate = NSDate()
+        productDto.status = ProductStatus.Updated
         productRepository.updateProduct(productDto)
     }
     
-    func deleteProductById(id: String) {
-        productRepository.deleteProductById(id)
+    func addOrUpdateProduct(productDto: ProductDto) {
+        if isProductExistedForId(productDto.id) {
+            productRepository.updateProduct(productDto)
+        }
+        else {
+            productRepository.addProduct(productDto)
+        }
     }
     
-    func getAllProducts() -> [ProductDto] {
-        return productRepository.getAllProducts()
+    func deleteProduct(productDto: ProductDto) {
+        productDto.modificationDate = NSDate()
+        productDto.status = ProductStatus.Deleted
+        productRepository.updateProduct(productDto)
+    }
+    
+    func isProductExistedForId(id: String) -> Bool {
+        return productRepository.isProductExistedForId(id)
+    }
+    
+    func getAllProducts(includeDeletedProduct: Bool = false) -> [ProductDto] {
+        return productRepository.getAllProducts(includeDeletedProduct)
     }
     
     func mostRecentUpdatedDate() -> NSDate? {

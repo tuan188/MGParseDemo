@@ -10,11 +10,12 @@ import UIKit
 
 class Mapper: NSObject {
     class func mapFromProduct(product: Product, toProductDto productDto: ProductDto) {
-        productDto.id = product.id
-        productDto.creationDate = product.creation_date
-        productDto.modificationDate = product.modification_date
-        productDto.name = product.name
-        productDto.price = product.price.floatValue
+        productDto.id = product.id!
+        productDto.creationDate = product.creation_date!
+        productDto.modificationDate = product.modification_date!
+        productDto.name = product.name!
+        productDto.price = product.price!.floatValue
+        productDto.status = ProductStatus(rawValue: product.status!.integerValue)!
     }
     
     class func mapFromProductDto(productDto: ProductDto, toProduct product: Product) {
@@ -23,6 +24,7 @@ class Mapper: NSObject {
         product.modification_date = productDto.modificationDate
         product.name = productDto.name
         product.price = productDto.price
+        product.status = productDto.status.rawValue
     }
     
     class func productDtoFromProduct(product: Product) -> ProductDto {

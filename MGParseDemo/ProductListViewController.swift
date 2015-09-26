@@ -93,7 +93,7 @@ class ProductListViewController: UITableViewController, ProductViewControllerDel
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let product = products[indexPath.row]
-            productService.deleteProductById(product.id)
+            productService.deleteProduct(product)
             
             var row = -1
             for (index, value) in products.enumerate() {

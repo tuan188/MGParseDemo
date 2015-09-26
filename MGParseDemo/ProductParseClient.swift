@@ -17,13 +17,13 @@ class ProductParseClient: NSObject {
         obj.setObject(product.modificationDate, forKey: "modificationDate")
         obj.setObject(product.name, forKey: "name")
         obj.setObject(product.price, forKey: "price")
+        obj.setObject(product.status.rawValue, forKey: "status")
         do {
             try obj.save()
         }
         catch {
             print("Save error!")
         }
-        
     }
     
     func updateProduct(product: ProductDto) {
@@ -35,6 +35,7 @@ class ProductParseClient: NSObject {
                 obj.setObject(product.modificationDate, forKey: "modificationDate")
                 obj.setObject(product.name, forKey: "name")
                 obj.setObject(product.price, forKey: "price")
+                obj.setObject(product.status.rawValue, forKey: "status")
                 try obj.save()
             }
             
@@ -42,7 +43,19 @@ class ProductParseClient: NSObject {
         catch {
             print("Query error!")
         }
-        
+    }    
+    
+    func isProductExistedForId(id: String) -> Bool {
+        let query = PFQuery(className: "Product")
+        query.whereKey("id", equalTo: id)
+        do {
+            let objects = try query.findObjects()
+            return objects.count > 0
+        }
+        catch {
+            print("Query error!")
+        }
+        return false
     }
     
     func deleteProduct(productID: String) {
@@ -75,20 +88,27 @@ class ProductParseClient: NSObject {
         
         do {
             let objects = try query.findObjects()
-            for obj in objects {
-                let product = ProductDto()
-                product.id = obj.objectForKey("id") as! String
-                product.name = obj.objectForKey("name") as! String
-                product.price = obj.objectForKey("price") as! Float
-                product.creationDate = obj.objectForKey("creationDate") as! NSDate
-                product.modificationDate = obj.objectForKey("modificationDate") as! NSDate
-                products.append(product)
-            }
+            products += productDtosFromPFObjects(objects)
         }
         catch {
             print("Get products error!")
         }
         
+        return products
+    }
+    
+    private func productDtosFromPFObjects(objects: [PFObject]) -> [ProductDto] {
+        var products = [ProductDto]()
+        for obj in objects {
+            let product = ProductDto()
+            product.id = obj.objectForKey("id") as! String
+            product.name = obj.objectForKey("name") as! String
+            product.price = obj.objectForKey("price") as! Float
+            product.creationDate = obj.objectForKey("creationDate") as! NSDate
+            product.modificationDate = obj.objectForKey("modificationDate") as! NSDate
+            product.status = ProductStatus(rawValue: obj.objectForKey("status") as! Int)!
+            products.append(product)
+        }
         return products
     }
     
@@ -113,15 +133,7 @@ class ProductParseClient: NSObject {
         
         do {
             let objects = try query.findObjects()
-            for obj in objects {
-                let product = ProductDto()
-                product.id = obj.objectForKey("id") as! String
-                product.name = obj.objectForKey("name") as! String
-                product.price = obj.objectForKey("price") as! Float
-                product.creationDate = obj.objectForKey("creationDate") as! NSDate
-                product.modificationDate = obj.objectForKey("modificationDate") as! NSDate
-                products.append(product)
-            }
+            products += productDtosFromPFObjects(objects)
         }
         catch {
             print("Get products error!")

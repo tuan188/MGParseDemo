@@ -9,43 +9,43 @@
 import UIKit
 
 class SyncService: NSObject {
-    let productRepository = ProductRepository()
-    let productParseClient = ProductParseClient()
+    let productService = ProductService()
+    let productParseService = ProductParseService()
     
     func sync() {
-        let localUpdatedDate: NSDate? = productRepository.mostRecentUpdatedDate()
-        let parseUpdatedDate: NSDate? = productParseClient.mostRecentUpdatedDate()
+        let localUpdatedDate: NSDate? = productService.mostRecentUpdatedDate()
+        let parseUpdatedDate: NSDate? = productParseService.mostRecentUpdatedDate()
         
         if localUpdatedDate == nil {
             if parseUpdatedDate != nil {
-                let products = productParseClient.getAllProducts()
+                let products = productParseService.getAllProducts()
                 for product in products {
-                    productRepository.addProduct(product)
+                    productService.addProduct(product)
                 }
             }
         }
         else {
             if parseUpdatedDate != nil {
-                if localUpdatedDate!.compare(parseUpdatedDate!) == NSComparisonResult.OrderedDescending {  // localUpdatedDate > parseUpdatedDate
-                    let products = productRepository.getProductsUpdatedAfterDate(parseUpdatedDate!)
+                // localUpdatedDate > parseUpdatedDate
+                if localUpdatedDate!.compare(parseUpdatedDate!) == NSComparisonResult.OrderedDescending {
+                    let products = productService.getProductsUpdatedAfterDate(parseUpdatedDate!)
                     for product in products {
-                        productParseClient.addProduct(product)
+                        productParseService.addOrUpdateProduct(product)
                     }
                 }
                 else {
-                    let products = productParseClient.getProductsUpdatedAfterDate(parseUpdatedDate!)
+                    let products = productParseService.getProductsUpdatedAfterDate(localUpdatedDate!)
                     for product in products {
-                        productRepository.addProduct(product)
+                        productService.addOrUpdateProduct(product)
                     }
                 }
             }
             else {
-                let products = productRepository.getAllProducts()
+                let products = productService.getAllProducts(true)
                 for product in products {
-                    productParseClient.addProduct(product)
+                    productParseService.addProduct(product)
                 }
             }
         }
     }
-    
 }

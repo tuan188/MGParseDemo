@@ -8,10 +8,17 @@
 
 import UIKit
 
+enum ProductStatus: Int {
+    case New
+    case Updated
+    case Deleted
+}
+
 class ProductDto: NSObject {
     var id: String       = NSUUID().UUIDString
     var creationDate     = NSDate()
     var modificationDate = NSDate()
     var name             = ""
     var price: Float     = 0
+    var status           = ProductStatus.New
 }

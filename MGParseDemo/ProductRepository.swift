@@ -36,12 +36,29 @@ class ProductRepository: NSObject {
         }
     }
     
+    func isProductExistedForId(id: String) -> Bool {
+        let predicate = NSPredicate(format: "id = '\(id)'")
+        let product = Product.MR_findFirstWithPredicate(predicate)
+        if product != nil {
+            return true
+        }
+        return false
+    }
+    
     func count() -> Int {
         return Int(Product.MR_countOfEntities())
     }
     
-    func getAllProducts() -> [ProductDto] {
-        let products = Product.MR_findAll() as! [Product]
+    func getAllProducts(includeDeletedProduct: Bool = false) -> [ProductDto] {
+        let predicate = NSPredicate(format: "status != '\(ProductStatus.Deleted.rawValue)'")
+        var products: [Product]!
+        if includeDeletedProduct {
+            products = Product.MR_findAll() as! [Product]
+        }
+        else {
+            products = Product.MR_findAllWithPredicate(predicate) as! [Product]
+        }
+        
         var productDtos = [ProductDto]()
         
         for product in products {
